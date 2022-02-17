@@ -1,0 +1,13 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://prmeng.rosselcdn.net/sites/default/files/dpistyles_v2/ena_16_9_extra_big/2021/06/30/node_208046/38570641/public/2021/06/30/B9727545285Z.1_20210630115921_000%2BGP0IEKUQN.2-0.jpeg.jpg?itok=IcTfWW6i1625048413);">
+  <div class="container">
+    <h1 class="d-inline">Add a new <strong>category</strong></h1>
+  </div>
+</div>
+
+<div class="container mt-3">
+  <%= simple_form_for @list do |f| %>
+    <%= f.input :name %>
+    <%= f.input :url, label: 'Insert an image URL'%>
+    <%= f.submit 'Save' %>
+  <% end %>
+</div>

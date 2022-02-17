@@ -1,0 +1,19 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://prmeng.rosselcdn.net/sites/default/files/dpistyles_v2/ena_16_9_extra_big/2021/06/30/node_208046/38570641/public/2021/06/30/B9727545285Z.1_20210630115921_000%2BGP0IEKUQN.2-0.jpeg.jpg?itok=IcTfWW6i1625048413);">
+  <div class="container">
+    <h1 class="d-inline">List of <strong>movies</strong></h1>
+    <%= link_to "New category", new_list_path, :class => "btn btn-success d-inline float-right"%>
+  </div>
+</div>
+
+
+<div class="container mt-3">
+  <div class="cards">
+    <% @lists.each do |list|%>
+      <%= link_to list_path(list.id), :class => 'link-decoration' do %>
+        <div class='card-category' style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.url %>)">
+          <%= list.name %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
