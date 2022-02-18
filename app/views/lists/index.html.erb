@@ -6,11 +6,17 @@
 </div>
 
 
-<div class="container mt-3">
+<div class="container mt-3 mb-5">
   <div class="cards">
     <% @lists.each do |list|%>
       <%= link_to list_path(list.id), :class => 'link-decoration' do %>
-        <div class='card-category' style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.url %>)">
+
+        <% if list.photo.attached? %>
+          <% url = cl_image_path list.photo.key %>
+        <% else %>
+          <% url = 'https://ctrlr.org/wp-content/uploads/2021/11/fall-movies-index-1628968089.jpg' %>
+        <% end %>
+        <div class='card-category' style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= url %>)">
           <%= list.name %>
         </div>
       <% end %>

@@ -7,7 +7,7 @@
 <div class="container mt-3">
   <%= simple_form_for @list do |f| %>
     <%= f.input :name %>
-    <%= f.input :url, label: 'Insert an image URL'%>
+    <%= f.input :photo, as: :file %>
     <%= f.submit 'Save' %>
   <% end %>
 </div>
